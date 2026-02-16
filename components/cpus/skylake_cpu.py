@@ -237,7 +237,7 @@ class SkylakeCPU(O3CPU):
         # We don't provide any command-line arguments for configuring
         # the CPU, so you'll have to hardcode your values here.
         self.numROBEntries = FIXME
-        self.numIQEntries = 97
+        #self.numIQEntries = 97
         self.LQEntries = FIXME
         self.SQEntries = FIXME
         self.numPhysIntRegs = 180
@@ -249,6 +249,6 @@ class SkylakeCPU(O3CPU):
         # Branch predictor: from O3 command line args
         bpred_cls_name = "Skylake" + cpu_params["bpred_type"]
         BranchPredictorCls = getattr(sys.modules[__name__], bpred_cls_name)
-        self.branchPred = BranchPredictorCls()
+        self.branchPred =  BranchPredictor(conditionalBranchPred=BranchPredictorCls())
         
         print(f"Creating SkylakeCPU object: bpred={type(self.branchPred)}")
