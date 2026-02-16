@@ -129,7 +129,7 @@ class L2Cache(Cache):
         # FIXME TODO: Set these appropriately.
         size: str = FIXME,
         assoc: int = FIXME,
-        tag_latency: FIXME,
+        tag_latency: int = FIXME,
         data_latency: int = FIXME,
         response_latency: int = 1,
         mshrs: int = FIXME,
